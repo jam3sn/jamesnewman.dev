@@ -1,0 +1,18 @@
+{
+  "name": "jamesnewman",
+  "version": "1.0.0",
+  "description": "jamesnewman.dev site",
+  "scripts": {
+    "watch:eleventy": "eleventy --serve --watch"
+  },
+  "keywords": [],
+  "author": "James Newman",
+  "license": "ISC",
+  "dependencies": {
+    "clean-css": "^4.2.3"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "mustache": "^4.0.1"
+  }
+}

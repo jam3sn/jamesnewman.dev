@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'Catamaran';
+    src: url('assets/fonts/catamaran-extrabold-webfont.woff2') format('woff2'),
+        url('assets/fonts/catamaran-extrabold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('assets/fonts/sourcesanspro-regular-webfont.woff2') format('woff2'),
+        url('assets/fonts/sourcesanspro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code';
+    src: url('assets/fonts/sourcecodepro-regular-webfont.woff2') format('woff2'),
+        url('assets/fonts/sourcecodepro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --text-color: #1E272E;
+    --bg-color: white;
+    --primary-color: #FFDD59;
+    --light-grey: #F7F8F7;
+    --transition: .3s;
+    --page-width: 800px;
+}
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    padding-left: 70px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Catamaran", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: bold;
+}
+
+code {
+    font-family: "Source Code", "Lucida Console", Monaco, monospace;
+}
+
+a {
+    color: var(--text-color);
+}
+
+a:hover {
+    text-decoration: line-through;
+}
+
+
+
+.navbar {
+    align-content: center;
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px 0;
+    margin: auto;
+    width: var(--page-width);
+}
+
+.navbar a {
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+
+
+main {
+    margin: auto;
+    width: var(--page-width);
+}
+
+
+
+.sidebar {
+    background-color: var(--primary-color);
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 70px;
+}
+
+.sidebar-logo {
+    margin: 10px;
+    transition: transform var(--transition) ease;
+    width: 50px;
+}
+
+.sidebar-logo:hover {
+    transform: scale(1.1);
+}
