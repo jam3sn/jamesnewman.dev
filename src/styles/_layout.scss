@@ -5,13 +5,23 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     margin: auto;
-    max-width: $page-width;
-    z-index: 10;
     overflow: hidden;
+    z-index: 10;
+
+    @include respond-to('medium') {
+        background-color: transparent;
+        box-shadow: none;
+        position: static;
+    }
 
     a {
         text-decoration: none;
+        z-index: 1;
 
         &:active,
         &:focus,
@@ -40,6 +50,7 @@
         height: 40px;
         transition: transform $transition ease, color $transition ease;
         width: 40px;
+        z-index: 1;
 
         &:focus,
         &:hover {
@@ -49,11 +60,14 @@
         &:active {
             color: transparentize($text-color, 0.4);
         }
+
+        @include respond-to('medium') {
+            display: none;
+        }
     }
 
     &__options {
-        background: $primary-color;
-        background: linear-gradient(165deg, #FFDD59 0%, #FFDD59 30%, #008e84 100%);
+        background-color: $primary-color;
         display: flex;
         flex-direction: column;
         font-weight: bolder;
@@ -62,12 +76,18 @@
         justify-content: center;
         position: fixed;
         bottom: 0;
-        top: 60px;
+        top: 0;
         left: 100%;
         right: -100%;
         text-align: center;
         transition: left $transition ease-in-out, right $transition ease-in-out;
-        z-index: 9;
+        
+        @include respond-to('medium') {
+            background-color: transparent;
+            position: static;
+            flex-direction: row;
+            font-size: 16px;
+        }
     }
 
     &__options.active {
@@ -78,27 +98,85 @@
     ul {
         margin: 0;
         padding: 30px 10px;
+
+        @include respond-to('medium') {
+            padding: 7px 0 0;
+        }
     }
 
     li {
         list-style: none;
         margin: 0;
         padding: 0 0 10px 0;
+
+        @include respond-to('medium') {
+            padding: 0 24px 0 0;
+        }
     }
 }
 
 main {
-    margin: auto;
+    margin: 60px auto 0;
     max-width: $page-width;
+
+    @include respond-to('medium') {
+        padding-left: 60px;
+    }
 }
 
 .sidebar {
     @include respond-to('medium') {
         background-color: $primary-color;
         bottom: 0px;
+        display: flex;
+        align-items: center;
         left: 0px;
         position: fixed;
         top: 0px;
-        width: 70px;
+        width: 60px;
+    }
+
+    .social-icons {
+        display: flex;
+        fill: $text-color;
+        justify-content: space-around;
+        margin: auto;
+        max-width: 400px;
+
+        @include respond-to('medium') {
+            flex-direction: column;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 30px 10px;
+    }
+
+    li {
+        cursor: pointer;
+        list-style: none;
+        margin: 0;
+        transition: transform $transition ease, opacity $transition ease;
+
+        &:focus,
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            opacity: 60%;
+        }
+    }
+
+    svg {
+        height: 40px;
+        width: 40px;
+
+        @include respond-to('medium') {
+            height: 24px;
+            width: 24px;
+            margin-bottom: 24px;
+        }
     }
 }

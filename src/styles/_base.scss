@@ -13,10 +13,6 @@ body {
     color: $text-color;
     font-family: $text-fonts;
     font-size: 16px;
-
-    @include respond-to('medium') {
-        padding-left: 70px;
-    }
 }
 
 
