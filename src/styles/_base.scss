@@ -1,0 +1,105 @@
+//---------------------------
+// Page Setup
+//---------------------------
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $bg-color;
+    color: $text-color;
+    font-family: $text-fonts;
+    font-size: 16px;
+
+    @include respond-to('medium') {
+        padding-left: 70px;
+    }
+}
+
+
+//---------------------------
+// Titles
+//---------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $title-fonts;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 48px;
+
+    @include respond-to('medium') {
+        font-size: 64px;
+    }
+}
+
+h2 {
+    font-size: 32px;
+
+    @include respond-to('medium') {
+        font-size: 42px;
+    }
+}
+
+h3 {
+    font-size: 26px;
+
+    @include respond-to('medium') {
+        font-size: 32px;
+    }
+}
+
+h4 {
+    font-size: 20px;
+
+    @include respond-to('medium') {
+        font-size: 24px;
+    }
+}
+
+h4 {
+    font-size: 16px;
+}
+
+
+//---------------------------
+// Text
+//---------------------------
+
+code {
+    font-family: $code-fonts;
+}
+
+a {
+    color: $text-color;
+
+    &:active,
+    &:focus,
+    &:hover {
+        text-decoration: line-through;
+    }
+}
+
+
+//---------------------------
+// Buttons
+//---------------------------
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}

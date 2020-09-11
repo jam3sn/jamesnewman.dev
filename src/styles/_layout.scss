@@ -1,0 +1,104 @@
+.navbar {
+    align-content: center;
+    background-color: $primary-color;
+    box-shadow: $shadow;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: auto;
+    max-width: $page-width;
+    z-index: 10;
+    overflow: hidden;
+
+    a {
+        text-decoration: none;
+
+        &:active,
+        &:focus,
+        &:hover {
+            text-decoration: line-through;
+        }
+    }
+
+    &__logo {
+        display: block;
+        height: 40px;
+        transition: transform $transition ease, opacity $transition ease;
+
+        &:focus,
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            opacity: 60%;
+        }
+    }
+
+    &__menu-button {
+        padding: 4px;
+        height: 40px;
+        transition: transform $transition ease, color $transition ease;
+        width: 40px;
+
+        &:focus,
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            color: transparentize($text-color, 0.4);
+        }
+    }
+
+    &__options {
+        background: $primary-color;
+        background: linear-gradient(165deg, #FFDD59 0%, #FFDD59 30%, #008e84 100%);
+        display: flex;
+        flex-direction: column;
+        font-weight: bolder;
+        font-family: $title-fonts;
+        font-size: 32px;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        top: 60px;
+        left: 100%;
+        right: -100%;
+        text-align: center;
+        transition: left $transition ease-in-out, right $transition ease-in-out;
+        z-index: 9;
+    }
+
+    &__options.active {
+        left: 0;
+        right: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 30px 10px;
+    }
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 10px 0;
+    }
+}
+
+main {
+    margin: auto;
+    max-width: $page-width;
+}
+
+.sidebar {
+    @include respond-to('medium') {
+        background-color: $primary-color;
+        bottom: 0px;
+        left: 0px;
+        position: fixed;
+        top: 0px;
+        width: 70px;
+    }
+}

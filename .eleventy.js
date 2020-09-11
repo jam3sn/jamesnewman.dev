@@ -1,11 +1,6 @@
 const CleanCSS = require("clean-css");
 
 module.exports = function (eleventyConfig) {
-  // CSS Inline
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
-  
   // Copy assets over
   eleventyConfig.addPassthroughCopy('src/assets');
 
