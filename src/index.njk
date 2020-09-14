@@ -1,0 +1,50 @@
+---
+title: Home
+layout: base
+---
+<section id="home-hero" class="half-half half-half--reversed-mobile">
+    <div>
+        <h1>I'm James, a developer and maker</h1>
+        <a class="button button--primary" href="/about" title="About">More About Me</a>
+    </div>
+
+    <div id="hero-profile-picture">
+        <img src="assets/images/james.jpg" alt="Me" />
+    </div>
+</section>
+
+<section class="extra">
+    <h2>Latest Posts</h2>
+
+    <div class="articles">
+        {%- for post in collections.post.slice(0, 2) -%}
+        <article>
+            <a href="{{ post.url }}" alt="{{ post.data.title }}">
+                <h3>{{ post.data.title }}</h3>
+            </a>
+
+            <p>{{ post.data.summary }}</p>
+        </article>
+        {%- endfor -%}
+    </div>
+
+    <a class="button button--primary" href="/blog" title="Blog">View More Posts</a>
+</section>
+
+<section class="extra">
+    <h2>Recent Projects</h2>
+
+    <div class="articles">
+        {%- for project in collections.project.slice(0, 2) -%}
+        <article>
+            <a href="{{ post.url }}" alt="{{ project.data.title }}">
+                <h3>{{ project.data.title }}</h3>
+            </a>
+
+            <p>{{ project.data.summary }}</p>
+        </article>
+        {%- endfor -%}
+    </div>
+
+    <a class="button button--primary" href="/projects" title="Projects">View More Projects</a>
+</section>

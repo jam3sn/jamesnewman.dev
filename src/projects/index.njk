@@ -1,0 +1,22 @@
+---
+title: Projects
+layout: base
+---
+<section>
+    <h1>Projects</h1>
+    <h4>Freelance & Casual Projects</h4>
+</section>
+
+
+<section>
+    {%- for post in collections.post -%}
+    <article>
+        <img height="100px" src="{{ post.data.thumbnail }}" />
+        <a href="{{ post.url }}" alt="{{ post.data.title }}">
+            <h3>{{ post.data.title }}</h3>
+        </a>
+
+        <p>{{ post.data.summary }}</p>
+    </article>
+    {%- endfor -%}
+</section>

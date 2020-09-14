@@ -1,0 +1,25 @@
+.half-half {
+    display: flex;
+    flex-direction: column;
+
+    &--reversed-mobile {
+        flex-direction: column-reverse;
+    }
+
+    @include respond-to('medium') {
+        flex-direction: row;
+        
+        & > * {
+            width: 50%;
+            flex-grow: 0;
+        }
+    }
+}
+
+section {
+    margin: 50px 0;
+
+    &.extra {
+        margin: 125px 0;
+    }
+}

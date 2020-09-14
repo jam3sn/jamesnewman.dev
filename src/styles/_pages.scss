@@ -1,0 +1,30 @@
+//---------------------------
+// Home
+//---------------------------
+
+#home-hero {
+    h1 {
+        margin-bottom: 48px;
+    }
+
+    #hero-profile-picture {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        img {
+            border-radius: 50%;
+            box-shadow: $shadow;
+            display: block;
+            max-width: 250px;
+        }
+
+        @include respond-to('medium') {
+            justify-content: end;
+
+            img {
+                max-width: 300px;
+            }
+        }
+    }
+}

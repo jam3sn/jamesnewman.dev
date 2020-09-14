@@ -118,9 +118,10 @@
 main {
     margin: 60px auto 0;
     max-width: $page-width;
+    padding: 0 24px;
 
     @include respond-to('medium') {
-        padding-left: 60px;
+        padding: 0 0 0 60px;
     }
 }
 
@@ -170,8 +171,8 @@ main {
     }
 
     svg {
-        height: 40px;
-        width: 40px;
+        height: 32px;
+        width: 32px;
 
         @include respond-to('medium') {
             height: 24px;
