@@ -12,7 +12,7 @@ body {
     background-color: $bg-color;
     color: $text-color;
     font-family: $text-fonts;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -26,6 +26,7 @@ h3,
 h4,
 h5,
 h6 {
+    color: $title-color;
     font-family: $title-fonts;
     font-weight: bold;
     line-height: 130%;
@@ -78,11 +79,8 @@ h5 {
 //---------------------------
 
 p {
-    line-height: 28px;
-}
-
-code {
-    font-family: $code-fonts;
+    line-height: 32px;
+    margin: 24px 0;
 }
 
 a {
@@ -95,6 +93,29 @@ a {
     }
 }
 
+blockquote {
+    background-color: $primary-color;
+    border-radius: $border-radius;
+    font-family: $title-fonts;
+    margin: 0;
+    padding: 24px;
+    line-height: 100%;
+
+    p {
+        line-height: 100%;
+        margin: 0;
+    }
+}
+
+ul,
+ol {
+    margin: 0 0 0 40px;
+    padding: 0;
+
+    li {
+        margin: 16px;
+    }
+}
 
 //---------------------------
 // Buttons
@@ -111,7 +132,8 @@ button {
 }
 
 .button {
-    border-radius: 12px;
+    backface-visibility: hidden;
+    border-radius: $border-radius;
     box-shadow: $shadow;
     color: $text-color;
     display: inline-block;

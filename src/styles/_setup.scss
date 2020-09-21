@@ -2,7 +2,8 @@
 // Variables
 //---------------------------
 
-$text-color: #1E272E;
+$title-color: #1E272E;
+$text-color: #2f3c46;
 $bg-color: white;
 $primary-color: #FFDD59;
 $light-grey: #F7F8F7;
@@ -10,7 +11,9 @@ $transition: .3s;
 $page-width: 800px;
 $md: 768px;
 
-$shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+$shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+$border-radius: 12px;
 
 $breakpoints: ('small': 767px,
     'medium': 992px,

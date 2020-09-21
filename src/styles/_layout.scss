@@ -20,32 +20,44 @@
     }
 
     a {
+        backface-visibility: hidden;
+        color: $title-color;
+        display: inline-block;
         text-decoration: none;
+        position: relative;
         z-index: 1;
+        transition: transform $transition ease;
 
         &:active,
         &:focus,
         &:hover {
-            text-decoration: line-through;
+            transform: scale(1.1);
         }
     }
 
     &__logo {
+        backface-visibility: hidden;
         display: block;
-        height: 40px;
+        position: fixed;
         transition: transform $transition ease, opacity $transition ease;
 
-        &:focus,
-        &:hover {
-            transform: scale(1.1);
-        }
+        img {
+            display: block;
+            height: 40px;
 
-        &:active {
-            opacity: 60%;
+            &:focus,
+            &:hover {
+                transform: scale(1.1);
+            }
+    
+            &:active {
+                opacity: 60%;
+            }
         }
     }
 
     &__menu-button {
+        backface-visibility: hidden;
         padding: 4px;
         height: 40px;
         transition: transform $transition ease, color $transition ease;
@@ -100,7 +112,7 @@
         padding: 30px 10px;
 
         @include respond-to('medium') {
-            padding: 7px 0 0;
+            padding: 0;
         }
     }
 
@@ -139,7 +151,7 @@ main {
 
     .social-icons {
         display: flex;
-        fill: $text-color;
+        fill: $title-color;
         justify-content: space-around;
         margin: auto;
         max-width: 400px;
@@ -155,6 +167,7 @@ main {
     }
 
     li {
+        backface-visibility: hidden;
         cursor: pointer;
         list-style: none;
         margin: 0;

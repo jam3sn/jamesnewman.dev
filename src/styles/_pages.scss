@@ -28,3 +28,21 @@
         }
     }
 }
+
+
+//---------------------------
+// Blog
+//---------------------------
+
+#blog-post main {
+    img {
+        border-radius: $border-radius;
+        display: block;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    section > p {
+        margin: 40px 0;
+    }
+}
