@@ -7,13 +7,11 @@ layout: base
     <h4>My collection of technical rambles</h4>
 </section>
 
-
 <section>
     {%- for post in collections.post -%}
     <article>
-        <img height="100px" src="{{ post.data.thumbnail }}" />
         <a href="{{ post.url }}" alt="{{ post.data.title }}">
-            <h3>{{ post.data.title }}</h3>
+            <h2>{{ post.data.title }}</h2>
         </a>
 
         <p>{{ post.data.summary }}</p>

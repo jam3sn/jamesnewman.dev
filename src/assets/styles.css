@@ -102,6 +102,7 @@ blockquote {
   background-color: #FFDD59;
   border-radius: 12px;
   font-family: "Catamaran", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-style: italic;
   margin: 0;
   padding: 24px;
   line-height: 100%;
@@ -272,7 +273,7 @@ p > code {
   background-color: #FFDD59;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 10px;
   position: fixed;
   top: 0;
@@ -301,20 +302,21 @@ p > code {
 .navbar a:active, .navbar a:focus, .navbar a:hover {
   transform: scale(1.1);
 }
-.navbar__logo {
+.navbar a.navbar__logo {
   backface-visibility: hidden;
   display: block;
   position: fixed;
+  left: 10px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.navbar__logo img {
+.navbar a.navbar__logo img {
   display: block;
   height: 40px;
 }
-.navbar__logo img:focus, .navbar__logo img:hover {
+.navbar a.navbar__logo img:focus, .navbar a.navbar__logo img:hover {
   transform: scale(1.1);
 }
-.navbar__logo img:active {
+.navbar a.navbar__logo img:active {
   opacity: 60%;
 }
 .navbar__menu-button {
@@ -358,6 +360,8 @@ p > code {
     position: static;
     flex-direction: row;
     font-size: 16px;
+    justify-content: flex-end;
+    width: 100%;
   }
 }
 .navbar__options.active {
@@ -370,7 +374,7 @@ p > code {
 }
 @media (min-width: 992px) {
   .navbar ul {
-    padding: 0;
+    padding: 6px 0;
   }
 }
 .navbar li {
@@ -385,12 +389,13 @@ p > code {
 }
 
 main {
-  margin: 60px auto 0;
+  margin: 100px auto 0;
   max-width: 800px;
-  padding: 0 24px;
+  padding: 0 24px 0;
 }
 @media (min-width: 992px) {
   main {
+    margin: 60px auto 0;
     padding: 0 0 0 60px;
   }
 }
@@ -455,6 +460,7 @@ main {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 #home-hero #hero-profile-picture img {
   border-radius: 50%;
@@ -465,6 +471,7 @@ main {
 @media (min-width: 992px) {
   #home-hero #hero-profile-picture {
     justify-content: end;
+    margin-bottom: 0px;
   }
   #home-hero #hero-profile-picture img {
     max-width: 300px;

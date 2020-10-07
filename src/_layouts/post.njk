@@ -4,7 +4,9 @@ templateId: blog-post
 ---
 <header>
     <h1>{{ title }}</h1>
-    <date>{{ date.getDate() }}/{{ date.getMonth()+1 }}/{{ date.getFullYear() }}</date>
+    <nav>
+        <date>{{ date.getDate() }}/{{ date.getMonth()+1 }}/{{ date.getFullYear() }}</date>
+    </nav>
 </header>
 
 <section>
