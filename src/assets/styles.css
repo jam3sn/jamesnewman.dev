@@ -93,9 +93,17 @@ p {
 
 a {
   color: #2f3c46;
+  position: relative;
 }
-a:active, a:focus, a:hover {
-  text-decoration: line-through;
+a:active::before, a:focus::before, a:hover::before {
+  background-color: #FFDD59;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 
 blockquote {
@@ -154,8 +162,15 @@ button {
   transform: scale(1.1);
   text-decoration: none;
 }
+.button:active::before, .button:focus::before, .button:hover::before {
+  display: none;
+}
 .button--primary {
   background-color: #FFDD59;
+}
+
+article {
+  margin: 50px 0;
 }
 
 /**
@@ -423,6 +438,9 @@ main {
   .sidebar .social-icons {
     flex-direction: column;
   }
+}
+.sidebar a:active::before, .sidebar a:focus::before, .sidebar a:hover::before {
+  display: none;
 }
 .sidebar ul {
   margin: 0;

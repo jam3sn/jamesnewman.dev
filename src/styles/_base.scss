@@ -85,11 +85,21 @@ p {
 
 a {
     color: $text-color;
+    position: relative;
 
     &:active,
     &:focus,
     &:hover {
-        text-decoration: line-through;
+        &::before {
+            background-color: $primary-color;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
     }
 }
 
@@ -157,7 +167,19 @@ button {
         text-decoration: none;
     }
 
+    &:active,
+    &:focus,
+    &:hover {
+        &::before {
+            display: none;
+        }
+    }
+
     &--primary {
         background-color: $primary-color;
     }
+}
+
+article {
+    margin: 50px 0;
 }

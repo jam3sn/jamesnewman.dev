@@ -9,14 +9,13 @@ layout: base
 
 
 <section>
-    {%- for post in collections.post -%}
+    {%- for project in collections.projects -%}
     <article>
-        <img height="100px" src="{{ post.data.thumbnail }}" />
-        <a href="{{ post.url }}" alt="{{ post.data.title }}">
-            <h3>{{ post.data.title }}</h3>
+        <a href="{{ project.url }}" alt="{{ project.data.title }}">
+            <h2>{{ project.data.title }}</h2>
         </a>
 
-        <p>{{ post.data.summary }}</p>
+        <p>{{ project.data.summary }}</p>
     </article>
     {%- endfor -%}
 </section>

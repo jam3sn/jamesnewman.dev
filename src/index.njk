@@ -17,11 +17,13 @@ layout: base
     <h2>Latest Posts</h2>
 
     <div class="articles">
-        {%- for post in collections.post.slice(0, 2) -%}
+        {%- for post in collections.posts.slice(0, 2) -%}
         <article>
-            <a href="{{ post.url }}" alt="{{ post.data.title }}">
-                <h3>{{ post.data.title }}</h3>
-            </a>
+            <h3>
+                <a href="{{ post.url }}" alt="{{ post.data.title }}">
+                    {{ post.data.title }}
+                </a>
+            </h3>
 
             <p>{{ post.data.summary }}</p>
         </article>
@@ -35,7 +37,7 @@ layout: base
     <h2>Recent Projects</h2>
 
     <div class="articles">
-        {%- for project in collections.project.slice(0, 2) -%}
+        {%- for project in collections.projects.slice(0, 2) -%}
         <article>
             <a href="{{ post.url }}" alt="{{ project.data.title }}">
                 <h3>{{ project.data.title }}</h3>

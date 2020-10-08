@@ -50,7 +50,7 @@
             &:hover {
                 transform: scale(1.1);
             }
-    
+
             &:active {
                 opacity: 60%;
             }
@@ -94,7 +94,7 @@
         right: -100%;
         text-align: center;
         transition: left $transition ease-in-out, right $transition ease-in-out;
-        
+
         @include respond-to('medium') {
             background-color: transparent;
             position: static;
@@ -162,6 +162,16 @@ main {
 
         @include respond-to('medium') {
             flex-direction: column;
+        }
+    }
+
+    a {
+        &:active,
+        &:focus,
+        &:hover {
+            &::before {
+                display: none;
+            }
         }
     }
 
