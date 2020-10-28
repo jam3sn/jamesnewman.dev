@@ -7,8 +7,16 @@ templateId: blog-post
     <nav>
         <date>{{ date.getDate() }}/{{ date.getMonth()+1 }}/{{ date.getFullYear() }}</date>
     </nav>
+    <hr />
 </header>
 
-<section>
+<section class="content">
     {{ content | safe }}
 </section>
+
+<footer>
+    <hr>
+    <h4>
+        <a href="/blog">Back to blog</a>
+    </h4>
+</footer>

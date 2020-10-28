@@ -1,22 +1,25 @@
 ---
 title: Home
 layout: base
+templateId: home
 ---
-<section id="home-hero" class="half-half half-half--reversed-mobile">
+<section class="split-hero">
     <div>
-        <h1>I'm James, a developer and maker</h1>
-        <a class="button button--primary" href="/about" title="About">More About Me</a>
+        <h1>Developer & Maker</h1>
+        <h3>I’m James, a developer at <a href="https://www.echosec.net/" title="GitHub" target="_blank" rel="noopener noreferrer">EchoSec Systems</a>.</h3>
+        <h6>PHP <span class="divider">|</span> Laravel <span class="divider">|</span> TypeScript <span class="divider">|</span> JavaScript <span class="divider">|</span> Vue <span class="divider">|</span> Tailwind </h6>
     </div>
 
-    <div id="hero-profile-picture">
+    <div class="split-hero__picture">
         <img src="assets/images/james.jpg" alt="Me" />
     </div>
 </section>
 
 <section class="extra">
-    <h2>Latest Posts</h2>
+    <h2>Blog</h2>
+    <hr />
 
-    <div class="articles">
+    <div>
         {%- for post in collections.posts.slice(0, 2) -%}
         <article>
             <h3>
@@ -34,9 +37,10 @@ layout: base
 </section>
 
 <section class="extra">
-    <h2>Recent Projects</h2>
+    <h2>Projects</h2>
+    <hr />
 
-    <div class="articles">
+    <div>
         {%- for project in collections.projects.slice(0, 2) -%}
         <article>
             <a href="{{ post.url }}" alt="{{ project.data.title }}">

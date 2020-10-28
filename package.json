@@ -7,8 +7,7 @@
     "watch:eleventy": "eleventy --serve --watch",
     "watch:styles": "sass src/styles/main.scss src/assets/styles.css --watch  --no-source-map",
     "styles": "sass src/styles/main.scss src/assets/styles.css --style=compressed --no-source-map",
-    "minify-js": "minify src/js/site.js > src/assets/site.min.js",
-    "build": "npm run styles && npm run minify-js && eleventy"
+    "build": "npm run styles && eleventy"
   },
   "keywords": [],
   "author": "James Newman",
@@ -18,8 +17,8 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "minify": "^5.1.1",
     "mustache": "^4.0.1",
     "sass": "^1.26.10"
   }
