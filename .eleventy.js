@@ -1,5 +1,6 @@
 const CleanCSS = require("clean-css");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
   // Copy assets over
@@ -7,6 +8,9 @@ module.exports = function (eleventyConfig) {
 
   // Syntax highlighting
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  // RSS Support
+  eleventyConfig.addPlugin(pluginRss);
 
   // Order posts desc
   eleventyConfig.addCollection("posts", function (collection) {

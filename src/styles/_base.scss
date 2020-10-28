@@ -26,7 +26,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: $title-color;
+    color: $text-color;
     font-family: $title-fonts;
     font-weight: bold;
     line-height: 130%;
@@ -38,7 +38,7 @@ h1 {
     margin-bottom: 32px;
 
     @include respond-to('medium') {
-        font-size: 64px;
+        font-size: 56px;
     }
 }
 
@@ -71,6 +71,14 @@ h4 {
 
 h5 {
     font-size: 16px;
+    margin-bottom: 16px;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: $text-fonts;
+    margin-bottom: 16px;
 }
 
 
@@ -86,26 +94,25 @@ p {
 a {
     color: $text-color;
     position: relative;
+    text-decoration: none;
 
     &:active,
     &:focus,
     &:hover {
         &::before {
-            background-color: $primary-color;
+            background-color: $text-color;
             content: '';
             position: absolute;
-            top: 0;
+            top: 100%;
             right: 0;
-            bottom: 0;
             left: 0;
-            z-index: -1;
+            height: $border-width;
         }
     }
 }
 
 blockquote {
-    background-color: $primary-color;
-    border-radius: $border-radius;
+    border-left: $border-width $text-color solid;
     font-family: $title-fonts;
     font-style: italic;
     margin: 0;
@@ -143,10 +150,11 @@ button {
 }
 
 .button {
+    background-color: $text-color;
     backface-visibility: hidden;
     border-radius: $border-radius;
     box-shadow: $shadow;
-    color: $text-color;
+    color: $bg-color;
     display: inline-block;
     font-family: $title-fonts;
     font-weight: bold;
@@ -174,12 +182,15 @@ button {
             display: none;
         }
     }
-
-    &--primary {
-        background-color: $primary-color;
-    }
 }
 
 article {
     margin: 50px 0;
+}
+
+hr {
+    background-color: $text-color;
+    border: none;
+    height: $border-width;
+    margin: 0;
 }

@@ -2,7 +2,7 @@
 title: Whaat!
 date: 2020-10-04
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta libero id tellus imperdiet, at aliquet neque ultrices. In hac habitasse platea dictumst.
-tags: ['post']
+tags: ['post', 'new']
 layout: post
 ---
 

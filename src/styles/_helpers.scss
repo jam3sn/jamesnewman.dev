@@ -1,25 +1,15 @@
-.half-half {
+.split-hero {
     display: flex;
-    flex-direction: column;
-
-    &--reversed-mobile {
-        flex-direction: column-reverse;
-    }
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
 
     @include respond-to('medium') {
+        align-items: center;
         flex-direction: row;
-        
-        & > * {
-            width: 50%;
-            flex-grow: 0;
-        }
+        flex-wrap: nowrap;
     }
 }
 
-section {
-    margin: 50px 0;
-
-    &.extra {
-        margin: 125px 0;
-    }
+.divider {
+    margin: 0 8px;
 }
