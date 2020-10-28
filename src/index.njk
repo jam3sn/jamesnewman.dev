@@ -33,7 +33,7 @@ templateId: home
         {%- endfor -%}
     </div>
 
-    <a class="button button--primary" href="/blog" title="Blog">View More Posts</a>
+    <a class="button" href="/blog" title="Blog">View More Posts</a>
 </section>
 
 <section class="extra">
@@ -43,8 +43,8 @@ templateId: home
     <div>
         {%- for project in collections.projects.slice(0, 2) -%}
         <article>
-            <a href="{{ post.url }}" alt="{{ project.data.title }}">
-                <h3>{{ project.data.title }}</h3>
+            <a href="{{ project.url }}" alt="{{ project.data.title }}">
+                {{ project.data.title }}
             </a>
 
             <p>{{ project.data.summary }}</p>
@@ -52,5 +52,5 @@ templateId: home
         {%- endfor -%}
     </div>
 
-    <a class="button button--primary" href="/projects" title="Projects">View More Projects</a>
+    <a class="button" href="/projects" title="Projects">View More Projects</a>
 </section>

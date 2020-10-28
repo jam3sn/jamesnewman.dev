@@ -6,6 +6,9 @@ module.exports = function (eleventyConfig) {
   // Copy assets over
   eleventyConfig.addPassthroughCopy('src/assets');
 
+  // Copy over meta related files
+  eleventyConfig.addPassthroughCopy({'src/meta': '/'});
+
   // Syntax highlighting
   eleventyConfig.addPlugin(syntaxHighlight);
 
