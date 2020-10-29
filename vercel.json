@@ -1,7 +1,6 @@
 {
     "name": "personal-site",
     "version": 2,
-    "cleanUrls": true,
     "routes": [
         {
             "handle": "filesystem"
