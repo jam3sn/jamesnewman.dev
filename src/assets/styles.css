@@ -391,6 +391,16 @@ section.extra {
   display: flex;
   margin-bottom: 16px;
 }
+#blog-post .content h1,
+#blog-post .content h2,
+#blog-post .content h3,
+#blog-post .content h4,
+#project-post .content h1,
+#project-post .content h2,
+#project-post .content h3,
+#project-post .content h4 {
+  margin-top: 60px;
+}
 #blog-post .content img,
 #project-post .content img {
   border-radius: 12px;
@@ -415,6 +425,10 @@ section.extra {
 #blog-post .content section > hr,
 #project-post .content section > hr {
   margin: 80px 0;
+}
+#blog-post footer,
+#project-post footer {
+  margin-top: 100px;
 }
 #blog-post footer h4,
 #project-post footer h4 {

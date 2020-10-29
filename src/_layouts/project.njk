@@ -1,11 +1,22 @@
 ---
 layout: base
+templateId: project-post
 ---
 <header>
     <h1>{{ title }}</h1>
-    <date>{{ date.getDate() }}/{{ date.getMonth()+1 }}/{{ date.getFullYear() }}</date>
+    <nav>
+        <date>{{ date.getDate() }}/{{ date.getMonth()+1 }}/{{ date.getFullYear() }}</date>
+    </nav>
+    <hr />
 </header>
 
-<section>
+<section class="content">
     {{ content | safe }}
 </section>
+
+<footer>
+    <hr>
+    <h4>
+        <a href="/projects">Back to Projects</a>
+    </h4>
+</footer>

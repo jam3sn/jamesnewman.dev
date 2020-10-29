@@ -1,42 +1,17 @@
 ---
 title: Hello World
-date: 2020-09-14
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta libero id tellus imperdiet, at aliquet neque ultrices. In hac habitasse platea dictumst.
+date: 2020-10-29
+summary: Welcome to my new site, built with Eleventy, pure CSS and zero JS. Oh so simple.
 tags: ['post']
 layout: post
 ---
-![Mountins picture](https://images.unsplash.com/photo-1600105597369-2db5bc8366cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta libero id tellus imperdiet, at aliquet neque ultrices. In hac habitasse platea dictumst. [Etiam dignissim](http://google.com) felis ipsum, sit amet dignissim magna egestas eget. Aliquam eget nunc a risus dignissim euismod. Praesent molestie tortor ac vehicula suscipit. Nulla sem felis, tincidunt et lorem eu, sagittis blandit sem. Aliquam in erat felis. Cras tincidunt viverra mauris a commodo. **Etiam** tristique imperdiet elementum.
+Welcome to my new site, now featuring... a blog (jazz hands)! It's taken a few steps into the minimal direction, but apparently that’s cool at the moment.
 
-> Aliquam eget nunc a risus dignissim euismod.
+My primary intention for rebuilding my personal site was to create something simple where I could blog and post projects. With this in mind, I was somewhat tempted to build my own static site generator in Node with TypeScript, as a method of better learning Nodes file system api. And because most of the solutions I had heard of, e.g. [Gridsome](https://gridsome.org "Gridsome") and [Gatsby](https://www.gatsbyjs.com "Gatsby") felt overly large and cumbersome. However, I stumbled upon [Eleventy](https://www.11ty.dev "Eleventy (11ty)") (11ty) and it’s the perfect fit.
 
-Integer rutrum lectus sed condimentum luctus. Praesent lacinia ex et massa volutpat ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id elementum enim, in suscipit urna. Integer ut finibus nunc, ut facilisis sem. Donec eget sapien eu justo sollicitudin rutrum id nec erat. Duis eget felis ullamcorper, commodo nulla sit amet, rhoncus felis. Aliquam sit amet lacus id arcu varius porta id at metus. Pellentesque ipsum tellus, hendrerit quis lectus in, ultrices ornare metus. 
+In their own words, “Eleventy is a simpler static site generator”, doing exactly what it says on the tin. It’s versatile, allowing you to use markdown, html, and a variety template files, whatever suits your taste.  Additionally, there’s a small ecosystem of plugins for things like RSS, Navigation and Syntax highlighting.
 
-1. Do something cool
-2. Next do the next cool thing
-3. The end
+I did however find the initial setup of my project to be a little tricky, lots of digging around the docs, example projects and googling, but I’ve reached a point now where I get it, and I like it.
 
-Aliquam tincidunt commodo sem, sed accumsan lorem vehicula non. Fusce tincidunt venenatis malesuada. Phasellus eget bibendum erat, at consectetur lectus. Donec sollicitudin nunc quis dui dictum, non placerat quam gravida. Nulla non tempor tortor, ut dignissim mauris. Integer maximus dictum blandit. Suspendisse potenti. Quisque ultrices faucibus lacus, vitae tincidunt sem vehicula et. Fusce dignissim sollicitudin auctor. Vestibulum tempor condimentum congue. Cras rutrum magna eu dictum gravida. Ut vestibulum vel urna pulvinar suscipit. Duis sit amet lacus at erat faucibus gravida sed sit amet dui. Praesent elit justo, tempus nec turpis eget, aliquet feugiat mauris. Curabitur vitae risus quis justo semper sodales.
-
-Cras eu nibh accumsan, varius diam eu, maximus neque. Ut dui urna, tincidunt eu quam eget, condimentum fermentum arcu. Maecenas interdum dui dolor, sit amet feugiat turpis auctor in. Nulla nisi sapien, gravida vulputate ipsum sit amet, venenatis pulvinar odio. Quisque dignissim purus ex, a dictum nulla cursus ac. Donec ex nunc, aliquet et metus in, imperdiet blandit libero. Donec auctor quam neque, at pretium enim ornare in. Ut urna ex, `console.log('something')` ultricies id leo quis, auctor finibus nulla. Aenean efficitur, purus et volutpat placerat, elit ex molestie felis, quis eleifend lacus nunc rutrum lectus. Nunc et pellentesque eros, at mattis dui. Donec vel enim at ante vulputate pretium in ut felis. Quisque blandit erat tortor, eget facilisis tellus mollis sed. Integer sagittis lorem at mattis volutpat. Proin tellus turpis, elementum at velit eu, maximus vulputate velit.
-
-``` js
-let count = 0
-
-function(param) {
-    param.forEach((item) => {
-        count++;
-        console.log(item.name);
-    });
-}
-```
-
-Nulla tristique nibh id faucibus cursus. Nulla vel enim varius, ultricies magna in, varius magna. Vivamus id feugiat lacus. Donec at porttitor lorem, id sodales nisl. Ut id sem at lorem dignissim laoreet. Integer vestibulum facilisis laoreet. Sed in nulla sollicitudin, porta lorem vel, egestas elit. Praesent molestie orci quis dolor faucibus, ac dapibus eros varius. In vel pellentesque lorem, eget mattis velit. Donec ac turpis aliquam velit hendrerit posuere sit amet in odio. Curabitur in nisi sed augue maximus sagittis. Sed dolor diam, malesuada eget sodales et, aliquam at magna. Mauris eget placerat magna. Aliquam ac gravida ante. Fusce mollis orci risus, et eleifend justo vehicula sed.
-
-- Hello
-- World
-
-Aliquam tincidunt commodo sem, sed accumsan lorem vehicula non. Fusce tincidunt venenatis malesuada. Phasellus eget bibendum erat, at consectetur lectus. Donec sollicitudin nunc quis dui dictum, non placerat quam gravida. Nulla non tempor tortor, ut dignissim mauris. Integer maximus dictum blandit. Suspendisse potenti. Quisque ultrices faucibus lacus, vitae tincidunt sem vehicula et. Fusce dignissim sollicitudin auctor. Vestibulum tempor condimentum congue. Cras rutrum magna eu dictum gravida. Ut vestibulum vel urna pulvinar suscipit. Duis sit amet lacus at erat faucibus gravida sed sit amet dui. Praesent elit justo, tempus nec turpis eget, aliquet feugiat mauris. Curabitur vitae risus quis justo semper sodales.
-
-Integer rutrum lectus sed condimentum luctus. Praesent lacinia ex et massa volutpat ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id elementum enim, in suscipit urna. Integer ut finibus nunc, ut facilisis sem. Donec eget sapien eu justo sollicitudin rutrum id nec erat. Duis eget felis ullamcorper, commodo nulla sit amet, rhoncus felis. Aliquam sit amet lacus id arcu varius porta id at metus. Pellentesque ipsum tellus, hendrerit quis lectus in, ultrices ornare metus. 
+So all in, I’m using [Eleventy](https://www.11ty.dev "Eleventy (11ty)") (obviously) as the SSG, SCSS to write my CSS, some open fonts, [Cloudinary](https://cloudinary.com "Cloudinary") to serve images and [Vercel](https://vercel.com "Vercel") (previously now.sh / Zeit) to host it all. Oh, and zero, nil, none… no JS on the site whatsoever. I’m intending to try [Cloudflare’s new web analytics](https://www.cloudflare.com/en-gb/web-analytics/) for monitoring the sites analytics, while respecting readers privacy.
