@@ -8,13 +8,13 @@ layout: post
 
 Since picking up docker last year it's completely changed how I set up projects, home network applications, and now how I deploy Minecraft servers for friends. Gone are the days of figuring out which version of JDK I need on an ubuntu box and remembering the commands to reconnect to a [screen](https://help.ubuntu.com/community/Screen) session.
 
-In this post I'll walk you through setting up different Minecraft servers, running vanilla, Forge and Paper, all on the same host. In a [follow up post](/blog/routung-minecraft-servers) I go through routing to these server on the same port.
+In this post I'll walk you through setting up a few different Minecraft servers, running vanilla, Paper and Forge, all on the same host. In a [follow up post](/blog/routing-minecraft-servers) I go through routing to these server on the same port.
 
-Before we get started, I'd recommend having some basic command line and linux knowlegde. In addition, pre-existing docker and docker-compose experience is a bonus but **not** required.
+Before we get started, I'd recommend having some basic command line and linux knowledge. In addition, pre-existing docker and docker-compose experience is a bonus but **not** required.
 
 ### The Environment
 
-Docker being docker, you can run this on Windows, Linux, MacOS - A spare computer, the cheapest DigitalOcean droplet, heck even a Raspberry Pi! Just make sure your systems up to date, has docker and docker-compose installed. Here's what we'll be using:
+Docker being docker, you can run this on Windows, Linux, macOS - A spare computer, the cheapest DigitalOcean droplet, heck even a Raspberry Pi! Just make sure your systems up to date, has docker and docker-compose installed. Here's what we'll be using:
 
 - A docker host, the steps below are for Ubuntu but you can use any.
 - [itzg/minecraft-server](https://hub.docker.com/r/itzg/minecraft-server) docker image to run the server.
@@ -24,7 +24,7 @@ Docker being docker, you can run this on Windows, Linux, MacOS - A spare compute
 These instructions are for x86_64 / amd64 systems. Dockers full install guide is available [here](https://docs.docker.com/engine/install/ubuntu/) and the full Docker Compose guide [here](https://docs.docker.com/compose/install/).
 
 ``` bash
-# Install the required packaged
+# Install the required packages
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -43,7 +43,7 @@ echo \
 # Finally install Docker Engine
 sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-# Add user to the docker group. You'll want to log out and back in so the permissions are set
+# Add your user to the docker group. You'll want to log out and back in so the permissions are set
 sudo usermod -aG docker $USER
 
 # Download Docker Compose (Change the version from 1.29.2 to the current version)
@@ -64,7 +64,7 @@ docker-compose -v
 
 ### Creating our first server with Docker Compose
 
-It's vary rarely I'll run a docker image with the docker command line. Having to remember the command and all the arguments I need, it's all a faff, however the image we're using does support it if you'd prefer, take a look [here](https://hub.docker.com/r/itzg/minecraft-server).
+It's vary rarely I'll run a docker image with the docker command line. Having to remember the command and all the arguments I need, it's all a faff, however if you'd prefer to use this, take a look [here](https://hub.docker.com/r/itzg/minecraft-server).
 
 Now, lets define our first Minecraft server, a simple vanilla server. First up, we'll create a directory to store all this. It can be your home directory, or elsewhere. We also need to create a docker-compose file.
 
@@ -79,7 +79,7 @@ cd minecraft-servers
 touch docker-compose.yml
 
 # Create a directory to store our vanilla server files in
-mkdir vanilla
+mkdir -p vanilla/server
 ```
 
 Go ahead and open the docker-compose.yml. You can use nano, vim or even connect [VS Code with SSH](https://code.visualstudio.com/docs/remote/ssh).
@@ -97,7 +97,7 @@ services:
             EULA: "TRUE"
             MEMORY: 2G
         volumes:
-            - ./vanilla:/data
+            - ./vanilla/server:/data
         restart: unless-stopped
         tty: true
         stdin_open: true
@@ -118,10 +118,61 @@ vanilla | [17:22:18] [Server thread/INFO]: Done (13.045s)! For help, type "help"
 
 Congratulations, you can now connect to your new server using the server IP or `localhost` if you're running it on the same machine! To exit, you can use `ctrl + c` in the terminal.
 
-If you take a look in the `vanilla` directory we created earlier, you'll see it's generated all the server files needed. You *can* go ahead and edit the `server.properties` if you wish to make any changes to the servers configuration, however I'd recommend adding these to the `environment` block in our `docker-compose.yml` and simply deleting the `server.properties` file. This file will be recreated when you next start the server with your newly added environment options.
+If you take a look in the `vanilla/server` directory we created earlier, you'll see it's generated all the server files needed. You *can* go ahead and edit the `server.properties` if you wish to make any changes to the servers configuration, however I'd recommend adding these to the `environment` block in our `docker-compose.yml` and simply deleting the `server.properties` file. This file will be recreated when you next start the server with your newly added environment options.
 
-### Adding a modpack server
 
+
+### Adding different server types
+
+So we have our vanilla server set up, but if we want to use some server plugins, to say manage permissions or add prefixes to usernames in chat, we'll need to use a different server type. For a vanilla server, you have a few options, most popular: Bukkit, Spigot and Paper. We'll use Paper.
+
+First, lets create a directory to keep our plugins in:
+
+``` bash
+mkdir vanilla/plugins
+
+```
+
+You can go ahead and add any plugins to this directory and we'll configure the container to mount these. You can also leave it blank for now and once we start the server you'll see `bStats` automatically added by Paper.
+
+Now in our `docker-compose.yml` file, we'll add a new entry to the `environment` block of our `vanilla` service, defining the server type. We'll also mount the plugins directory we just created.
+
+``` yaml
+version: "3.8"
+services:
+    vanilla:
+        container_name: vanilla
+        image: itzg/minecraft-server
+        ports:
+            - 25565:25565
+        environment:
+            # Add our server type
+            TYPE: PAPER
+            EULA: "TRUE"
+            MEMORY: 2G
+        volumes:
+            - ./vanilla:/data
+            # Mount our plugins directory
+            - ./vanilla/plugins:/plugins
+        restart: unless-stopped
+        tty: true
+        stdin_open: true
+```
+
+Lets spin up the updated server, you'll see it download the new jar and create some new files.
+
+``` bash
+# Start the service
+docker-compose up
+```
+
+Great! So now we have a vanilla server running, we add some plugins and manage various aspects of the server. Now lets take a look at a modded server!
+
+### Lets Forge on
+
+ 
+
+### Managing our servers
 
 
 ### Proxying and Routing domains to Minecraft Servers
