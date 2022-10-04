@@ -12,9 +12,11 @@ $shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
 $border-radius: 12px;
 
-$breakpoints: ('small': 767px,
+$breakpoints: (
+    'small': 767px,
     'medium': 992px,
-    'large': 1200px) !default;
+    'large': 1200px
+) !default;
 
 $title-fonts: "Catamaran",
 -apple-system,
@@ -96,6 +98,6 @@ monospace;
     // If the key doesn't exist in the map
     @else {
         @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        +"Available breakpoints are: #{map-keys($breakpoints)}.";
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
     }
 }
