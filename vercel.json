@@ -1,14 +1,5 @@
 {
     "name": "personal-site",
     "version": 2,
-    "routes": [
-        {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/(.*)",
-            "status": 404,
-            "dest": "/404/index.html"
-        }
-    ]
+    "rewrites": [{ "source": "/(.*)", "destination": "/404/index.html" }]
 }
