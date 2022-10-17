@@ -1,8 +1,8 @@
 ---
 title: Running Minecraft servers from Docker
-date: 2021-09-02
-summary: Lets get some Minecraft servers setup and managed through docker!
-# tags: ['post', 'docker', 'devops']
+date: 2022-10-17
+summary: Lets set up and manage a Minecraft server from Docker.
+tags: ['post', 'docker', 'devops', 'guide']
 layout: post
 ---
 
@@ -21,37 +21,13 @@ Docker being docker, you can run this on Windows, Linux, macOS - A spare compute
 
 #### Install Docker & Docker Compose
 
-These instructions are for x86_64 / amd64 systems. Dockers full install guide is available [here](https://docs.docker.com/engine/install/ubuntu/) and the full Docker Compose guide [here](https://docs.docker.com/compose/install/).
+Go ahead and follow the [Docker install steps](https://docs.docker.com/engine/install/) for the platform you wish to run the server on. Here's the [Ubuntu guide](https://docs.docker.com/engine/install/ubuntu/).
 
+_Handy tip: if you're on linux, make sure you add your user to the docker group:_
 ``` bash
-# Install the required packages
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-
-# Add Dockers GPG key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-# Add the docker repository
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# Finally install Docker Engine
-sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-# Add your user to the docker group. You'll want to log out and back in so the permissions are set
 sudo usermod -aG docker $USER
-
-# Download Docker Compose (Change the version from 1.29.2 to the current version)
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# Apply executable permission to the binary
-sudo chmod +x /usr/local/bin/docker-compose
 ```
+_You'll need to log out and back in again after._
 
 Now you should be all set! To double check, run the following:
 ``` bash
@@ -59,14 +35,14 @@ Now you should be all set! To double check, run the following:
 docker -v
 
 # Check Docker Compose version
-docker-compose -v
+docker compose -v
 ```
 
 ### Creating our first server with Docker Compose
 
-It's vary rarely I'll run a docker image with the docker command line. Having to remember the command and all the arguments I need, it's all a faff, however if you'd prefer to use this, take a look [here](https://hub.docker.com/r/itzg/minecraft-server).
+It's vary rarely I'll run a docker image with the docker command line, remembering the command and all the arguments I need is a faff. So lets define our first Minecraft server, a simple vanilla server, in a docker compose YAML file.
 
-Now, lets define our first Minecraft server, a simple vanilla server. First up, we'll create a directory to store all this. It can be your home directory, or elsewhere. We also need to create a docker-compose file.
+First up, we'll create a directory to contain all our files including the Minecraft servers:
 
 ``` bash
 # Create directory
@@ -75,14 +51,14 @@ mkdir minecraft-servers
 # cd into the directory
 cd minecraft-servers
 
-# Create a docker-compose.yml file
-touch docker-compose.yml
+# Create a docker-compose.yaml file
+touch docker-compose.yaml
 
 # Create a directory to store our vanilla server files in
 mkdir -p vanilla/server
 ```
 
-Go ahead and open the docker-compose.yml. You can use nano, vim or even connect [VS Code with SSH](https://code.visualstudio.com/docs/remote/ssh).
+Go ahead and open the `docker-compose.yaml`. You can use nano, vim or even connect [VS Code with SSH](https://code.visualstudio.com/docs/remote/ssh).
 In here we want to define our vanilla service:
 
 ``` yaml
@@ -107,10 +83,10 @@ This is the bare minimum configuration, but there's a whole bunch of options you
 
 ``` bash
 # Start the service
-docker-compose up
+docker compose up
 ```
 
-You'll should now see the server begin to start up. It'll take a little while on the first launch as it downloads the image and server files, and there'll be a bunch of text logged to the screen. You'll know it's ready when you see:
+You'll should now see the server begin to start up. It'll take a little while on the first launch as it downloads the image and generates server files. You'll know it's ready when you see:
 
 ``` log
 vanilla | [17:22:18] [Server thread/INFO]: Done (13.045s)! For help, type "help"
@@ -118,13 +94,13 @@ vanilla | [17:22:18] [Server thread/INFO]: Done (13.045s)! For help, type "help"
 
 Congratulations, you can now connect to your new server using the server IP or `localhost` if you're running it on the same machine! To exit, you can use `ctrl + c` in the terminal.
 
-If you take a look in the `vanilla/server` directory we created earlier, you'll see it's generated all the server files needed. You *can* go ahead and edit the `server.properties` if you wish to make any changes to the servers configuration, however I'd recommend adding these to the `environment` block in our `docker-compose.yml` and simply deleting the `server.properties` file. This file will be recreated when you next start the server with your newly added environment options.
+If you take a look in the `vanilla/server` directory we created earlier, you'll see it's generated all the server files needed. You *can* edit the `server.properties` to make changes to the servers configuration, however I'd recommend adding these to the `environment` block in our `docker-compose.yaml` and simply deleting the `server.properties` file. This file will be recreated when you next start the server with your newly added environment options.
 
 
 
 ### Adding different server types
 
-So we have our vanilla server set up, but if we want to use some server plugins, to say manage permissions or add prefixes to usernames in chat, we'll need to use a different server type. For a vanilla server, you have a few options, most popular: Bukkit, Spigot and Paper. We'll use Paper.
+So we have our vanilla server set up, but if we want to use some plugins to manage permissions or add prefixes to usernames in chat, we'll need to use a different server type. For a vanilla server that you can connect an unmodded client to, you have a few options: Bukkit, Spigot and Paper. We'll use Paper for the sake of this post.
 
 First, lets create a directory to keep our plugins in:
 
@@ -135,7 +111,7 @@ mkdir vanilla/plugins
 
 You can go ahead and add any plugins to this directory and we'll configure the container to mount these. You can also leave it blank for now and once we start the server you'll see `bStats` automatically added by Paper.
 
-Now in our `docker-compose.yml` file, we'll add a new entry to the `environment` block of our `vanilla` service, defining the server type. We'll also mount the plugins directory we just created.
+Now in our `docker-compose.yaml` file, we'll add a new entry to the `environment` block of our `vanilla` service, defining the server type. We'll also mount the plugins directory we just created.
 
 ``` yaml
 version: "3.8"
@@ -166,15 +142,12 @@ Lets spin up the updated server, you'll see it download the new jar and create s
 docker-compose up
 ```
 
-Great! So now we have a vanilla server running, we add some plugins and manage various aspects of the server. Now lets take a look at a modded server!
-
-### Lets Forge on
-
- 
-
-### Managing our servers
-
+Now you should be able to edit the configuration files for the plugins you added, log in and see them working!
 
 ### Proxying and Routing domains to Minecraft Servers
 
-In a follow up post, I go through adding adding [itzg/mc-router](https://hub.docker.com/r/itzg/mc-router) to route domains to multiple servers, all using the default `25565` port. No more ugly server addresses with different ports! You can read about that [here](/blog/routung-minecraft-servers)
+In a follow up post, I go through adding adding [itzg/mc-router](https://hub.docker.com/r/itzg/mc-router) to route domains to multiple servers, all using the default `25565` port. No more ugly server addresses with different ports! You can read about that [here](/blog/routing-minecraft-servers)
+
+### Closing thoughts
+
+So in this post we've created a Vanilla server, maintained and managed through docker. I highly recommend reading through the [docs](https://github.com/itzg/docker-minecraft-server) for this image as there's tons of configuration available, including support for modded servers. You can add more servers to this config and use something like [BungieCord](https://github.com/SpigotMC/BungeeCord) or [PaperMC Waterfall](https://github.com/PaperMC/Waterfall) switch servers ingame.
