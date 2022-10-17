@@ -20,7 +20,7 @@ templateId: home
     <hr />
 
     <div>
-        {%- for post in collections.posts.slice(0, 2) -%}
+        {%- for post in collections.posts.slice(0, 3) -%}
         <article>
             <h3>
                 <a href="{{ post.url }}" alt="{{ post.data.title }}">
@@ -41,7 +41,7 @@ templateId: home
     <hr />
 
     <div>
-        {%- for project in collections.projects.slice(0, 2) -%}
+        {%- for project in collections.projects.slice(0, 3) -%}
         <article>
             <h3>
                 <a href="{{ project.url }}" alt="{{ project.data.title }}">
