@@ -1,5 +1,0 @@
-{
-    "name": "personal-site",
-    "version": 2,
-    "rewrites": [{ "source": "/(.*)", "destination": "/404/index.html" }]
-}

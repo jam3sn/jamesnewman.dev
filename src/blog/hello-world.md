@@ -14,6 +14,8 @@ In their own words, “Eleventy is a simpler static site generator”, doing exa
 
 I did however find the initial setup of my project to be a little tricky, lots of digging around the docs, example projects and googling, but I’ve reached a point now where I get it, and I like it.
 
-So all in, I’m using [Eleventy](https://www.11ty.dev "Eleventy (11ty)") (obviously) as the SSG, SCSS to write my CSS, some open fonts, [Cloudinary](https://cloudinary.com "Cloudinary") to serve images and [Vercel](https://vercel.com "Vercel") (previously now.sh / Zeit) to host it all. Oh, and zero, nil, none… no JS on the site whatsoever. I’m intending to try [Cloudflare’s new web analytics](https://www.cloudflare.com/en-gb/web-analytics/) for monitoring the sites analytics, while respecting readers privacy.
+So all in, I’m using [Eleventy](https://www.11ty.dev "Eleventy (11ty)") (obviously) as the SSG, SCSS to write my CSS, some open fonts, [Cloudinary](https://cloudinary.com "Cloudinary") to serve images and ~[Vercel](https://vercel.com "Vercel") (previously now.sh / Zeit) to host it all. Oh, and zero, nil, none… no JS on the site whatsoever. I’m intending to try [Cloudflare’s new web analytics](https://www.cloudflare.com/en-gb/web-analytics/) for monitoring the sites analytics, while respecting readers privacy.
+
+**UPDATE**: As of 1st November 2022 I switched to [Cloudflare Pages](https://pages.cloudflare.com/). I'm also using Cloudflares Web Analytics on the free tier. It's somewhat basic but does the job for what I want.
 
 If you’re interested to know more about the code, you can checkout the [repository here](https://github.com/jam3sn/jamesnewman.dev "jamesnewman.dev repository").
