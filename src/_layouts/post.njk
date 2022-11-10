@@ -3,6 +3,10 @@ layout: base
 templateId: blog-post
 ---
 <header>
+    {% if headerImage %}
+    <img alt="{{title}} header image" src="{{headerImage}}" />
+    {% endif %}
+
     <h1>{{ title }}</h1>
     <nav>
         <date>{{ date.getDate() }}/{{ date.getMonth()+1 }}/{{ date.getFullYear() }}</date>

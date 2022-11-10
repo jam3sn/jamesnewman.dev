@@ -4,6 +4,7 @@ date: 2022-11-03
 summary: I moved this static site from Vercel to Cloudflare pages, lets talk through the process.
 tags: ['post', 'js', 'devops', 'guide']
 layout: post
+headerImage: https://res.cloudinary.com/jam3sn/image/upload/c_scale,w_800/v1668105698/vercel-cloudflare.png
 ---
 
 Cloudflare has launched its Pages product, [Cloudflare Pages](https://pages.cloudflare.com/). Aimed at JAMstack websites and applications, it joins the many hosting services that offer easy deployment for simple sites like this one! 

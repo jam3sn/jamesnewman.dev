@@ -4,6 +4,7 @@ date: 2022-10-17
 summary: Route domains to multiple Minecraft servers on the same host, all using the default port.
 tags: ['post', 'docker', 'devops', 'guide']
 layout: post
+headerImage: https://res.cloudinary.com/jam3sn/image/upload/c_scale,w_800/v1668105698/docker-minecraft.png
 ---
 
 In my [previous post](/blog/docker-minecraft-servers) I walked through the setup of a Minecraft server with docker. But now you might want to setup a few servers on the same host and route domains to them without different ports, a bit like reverse proxying.

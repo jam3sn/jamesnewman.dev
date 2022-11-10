@@ -4,6 +4,7 @@ date: 2022-10-17
 summary: Lets set up and manage a Minecraft server from Docker.
 tags: ['post', 'docker', 'devops', 'guide']
 layout: post
+headerImage: https://res.cloudinary.com/jam3sn/image/upload/c_scale,w_800/v1668105698/docker-minecraft.png
 ---
 
 Since picking up docker last year it's completely changed how I set up projects, home network applications, and now how I deploy Minecraft servers for friends. Gone are the days of figuring out which version of JDK I need on an ubuntu box and remembering the commands to reconnect to a [screen](https://help.ubuntu.com/community/Screen) session.

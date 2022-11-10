@@ -57,10 +57,6 @@ main {
     margin: 20px auto 0;
     max-width: $page-width;
     padding: 0 24px 0;
-
-    @include respond-to('medium') {
-        margin: 60px auto 0;
-    }
 }
 
 
