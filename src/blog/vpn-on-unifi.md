@@ -1,6 +1,6 @@
 ---
 title: Accessing a Unifi network over VPN
-date: 2022-11-03
+date: 2022-11-24
 summary: Setting up a VPN server on a Unifi Dream Machine for remote access to a network.
 tags: ['post', 'homelab', 'devops', 'guide']
 layout: post
