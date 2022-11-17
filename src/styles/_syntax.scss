@@ -5,7 +5,7 @@
 
  code[class*="language-"],
  pre[class*="language-"] {
-     color: $text-color;
+     color: var(--theme-color-primary);
      font-family: $code-fonts;
      direction: ltr;
      text-align: left;
@@ -31,7 +31,7 @@
  
  /* Code blocks */
  pre[class*="language-"] {
-     background-color: $light-grey;
+     background-color: var(--theme-color-secondary-alt);
      border-radius: $border-radius;
      padding: 1em;
      margin: .5em 0;
@@ -41,7 +41,7 @@
  /* Inline code */
  p > code {
      padding: 4px 8px;
-     background: $light-grey;
+     background: var(--theme-color-secondary-alt);
      border-radius: 8px;
      font-size: 16px;
  }

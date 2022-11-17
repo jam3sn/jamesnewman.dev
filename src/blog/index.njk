@@ -4,7 +4,7 @@ layout: base
 templateId: blog
 ---
 <header>
-    <h1>Blog</h1>
+    <h1>Posts</h1>
     <hr>
 </header>
 
@@ -12,7 +12,7 @@ templateId: blog
     {%- for post in collections.posts -%}
     <article>
         <a href="{{ post.url }}" alt="{{ post.data.title }}">
-            <h2>{{ post.data.title }}</h2>
+            <h3>{{ post.data.title }}</h3>
         </a>
 
         <p>{{ post.data.summary }}</p>

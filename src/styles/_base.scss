@@ -2,6 +2,16 @@
 // Page Setup
 //---------------------------
 
+:root {
+    --theme-color-primary: #1E272E;
+    --theme-color-secondary: #FFFFFF;
+
+    @media (prefers-color-scheme: dark) {
+        --theme-color-primary: #F7F8F7;
+        --theme-color-secondary: #1E272E;
+    }
+}
+
 html,
 body {
     margin: 0;
@@ -9,8 +19,8 @@ body {
 }
 
 body {
-    background-color: $bg-color;
-    color: $text-color;
+    background-color: var(--theme-color-secondary);
+    color: var(--theme-color-primary);
     font-family: $text-fonts;
     font-size: 18px;
 }
@@ -26,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: $text-color;
+    color: var(--theme-color-primary);
     font-family: $title-fonts;
     font-weight: bold;
     line-height: 130%;
@@ -92,7 +102,7 @@ p {
 }
 
 a {
-    color: $text-color;
+    color: var(--theme-color-primary);
     position: relative;
     text-decoration: none;
 
@@ -100,7 +110,7 @@ a {
     &:focus,
     &:hover {
         &::before {
-            background-color: $text-color;
+            background-color: var(--theme-color-primary);
             content: '';
             position: absolute;
             top: 100%;
@@ -112,7 +122,7 @@ a {
 }
 
 blockquote {
-    border-left: $border-width $text-color solid;
+    border-left: $border-width var(--theme-color-primary) solid;
     font-family: $title-fonts;
     font-style: italic;
     margin: 0;
@@ -150,11 +160,11 @@ button {
 }
 
 .button {
-    background-color: $text-color;
+    background-color: var(--theme-color-primary);
     backface-visibility: hidden;
     border-radius: $border-radius;
     box-shadow: $shadow;
-    color: $bg-color;
+    color: var(--theme-color-secondary);
     display: inline-block;
     font-family: $title-fonts;
     font-weight: bold;
@@ -189,7 +199,7 @@ article {
 }
 
 hr {
-    background-color: $text-color;
+    background-color: var(--theme-color-primary);
     border: none;
     height: $border-width;
     margin: 0;

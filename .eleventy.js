@@ -20,11 +20,6 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByTag("post").reverse();
   });
 
-  // Order projects desc
-  eleventyConfig.addCollection("projects", function (collection) {
-    return collection.getFilteredByTag("project").reverse();
-  });
-
   // Config
   return {
     dir: {
