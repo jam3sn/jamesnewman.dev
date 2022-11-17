@@ -32,8 +32,7 @@
     }
 }
 
-#blog-post,
-#project-post {
+#blog-post {
     header {
         margin-bottom: 40px;
 
@@ -43,6 +42,7 @@
         }
 
         img {
+            border-radius: $border-radius;
             width: 100%;
             margin-bottom: 20px;
         }

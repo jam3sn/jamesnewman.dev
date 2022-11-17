@@ -4,10 +4,10 @@
 
 :root {
     --theme-color-primary: #1E272E;
-    --theme-color-secondary: #FFFFFF;
+    --theme-color-secondary: #FAF9F0;
 
     @media (prefers-color-scheme: dark) {
-        --theme-color-primary: #F7F8F7;
+        --theme-color-primary: #F4F1DE;
         --theme-color-secondary: #1E272E;
     }
 }
