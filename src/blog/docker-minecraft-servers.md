@@ -1,8 +1,8 @@
 ---
 title: Running Minecraft servers from Docker
 date: 2022-10-17
-summary: Lets set up and manage a Minecraft server from Docker.
-tags: ['post', 'docker', 'devops', 'guide']
+summary: In this post I'll walk you through setting up a few different Minecraft servers, running vanilla, Paper and Forge, all on the same host. In a follow up post I go through routing to these server on the same port.
+tags: ['post', 'docker', 'devops', 'guide', 'minecraft']
 layout: post
 headerImage: https://res.cloudinary.com/jam3sn/image/upload/c_scale,w_800/v1668105698/docker-minecraft.png
 ---

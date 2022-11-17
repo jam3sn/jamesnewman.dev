@@ -1,7 +1,7 @@
 ---
 title: Accessing a Unifi network over VPN
 date: 2022-11-24
-summary: Setting up a VPN server on a Unifi Dream Machine for remote access to a network.
+summary: In this post I'm going to walk you through how I setup my VPN server on the Unifi Dream Machine, and it'll likely be the same for the Dream Machine Pro or Security Gateway.
 tags: ['post', 'homelab', 'devops', 'guide']
 layout: post
 headerImage: https://res.cloudinary.com/jam3sn/image/upload/c_scale,w_800/v1668446188/udm-vpn.png

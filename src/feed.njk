@@ -4,8 +4,8 @@
   "eleventyExcludeFromCollections": true,
   "metadata": {
     "title": "James Newmans Blog",
-    "subtitle": "Software developer writing about code",
-    "url": "https://jamesnewman.dev",
+    "subtitle": "I&rsquo;m James, a full time developer, part time tinkerer. I mash together words into blog posts about the tech Im playing with, be it my homelab, docker, or software development.",
+    "url": "https://jamesnewman.dev/",
     "feedUrl": "https://jamesnewman.dev/feed.xml",
     "author": {
       "name": "James Newman",
@@ -31,7 +31,7 @@
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | rssDate }}</updated>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content>{{ post.data.summary }}</content>
   </entry>

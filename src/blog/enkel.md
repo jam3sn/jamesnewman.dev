@@ -1,7 +1,7 @@
 ---
 title: Enkel
 date: 2020-01-15
-summary: Enkel, the clean and simple RSS Reader, built with Laravel, Inertia and Tailwind.
+summary: My project, Enkel. The clean and simple RSS Reader, built with Laravel, Inertia and Tailwind.
 tags: ['post', 'project']
 layout: post
 ---

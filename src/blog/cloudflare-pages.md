@@ -1,7 +1,7 @@
 ---
 title: Switching from Vercel to Cloudflare Pages
 date: 2022-11-03
-summary: I moved this static site from Vercel to Cloudflare pages, lets talk through the process.
+summary: I moved this static site from Vercel to Cloudflare pages, so lets go through the relatively simple process of setting up a static site on Cloudflare.
 tags: ['post', 'js', 'devops', 'guide']
 layout: post
 headerImage: https://res.cloudinary.com/jam3sn/image/upload/c_scale,w_800/v1668105698/vercel-cloudflare.png
@@ -58,5 +58,7 @@ And that was it! My nameservers for jamesnewman.dev were already pointing at Clo
 ### My thoughts so far
  
 As of writing this, the sites only been on Pages for a few days. However Cloudflare analytics seem to be working better and more importantly, the site seems to load faster! Better yet, it's backed by the power, scale and security of Cloudflare.
+
+Update: It's been almost 2 weeks since writing this post. The site's performing great on Cloudflare, however I am outgrowing the basic analytics. I'm reluctant to pay the additional $20 for pro to see more data, so looking for other options. Vercel kindly reached out mentioning their recent acquisition of Splitbee, but doesn't mention pricing anywhere.
 
 So should you switch? Maybe. Like I said at the beginning, I didn't _really_ need to switch and you probably don't need to either. But with that in mind, take a look at the feature list on [their site](https://pages.cloudflare.com/), [the pricing tiers](https://pages.cloudflare.com/#pricing) and evaluate if it's worth it for you.
