@@ -1,6 +1,6 @@
 ---
 title: My Homelab - 2022 A year in review
-date: 2022-12-31
+date: 2022-12-29
 summary: 2022 has truly been my year of homelabbing, with learning, iteration and change being a reoccurring theme. I began the year with a somewhat humble homelab, and while I’m not ending it with anything outrageous, it’s certainly come a long way. Looking into the next year, I plan for less hardware changes, but there’s certainly a lot more to learn.
 tags: ['post', 'homelab']
 layout: post
