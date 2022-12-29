@@ -86,7 +86,7 @@ I have set up a local Nextcloud to replace Synology drive for syncing smaller fi
 #### Networking
 This year I also began to step further into networking! With help from a friend I setup VLANs on my network, purchased some managed Netgear switches and segmented my network appropriately. This coincides with some firewall configuration and also helped me configure a VPN server for remote connections to my home network when I am out and about.
 
-While I’ve done all this on the UDM, I can’t help but feel that Unifi makes some of this configuration long winded and trickier than it should be. In addition, there are known problems like not being able to create a firewall rule preventing VPN clients to access to the controller. I am hopeful that the new controller OS update will resolve some of my bugbears. Failing that, a switch to pfSense is almost inevitable.
+While I’ve done all this on the UDM, I can’t help but feel that Unifi makes some of this configuration long winded and trickier than it should be. In addition, there are known problems like not being able to create a firewall rule preventing VPN clients from accessing the controller. I am hopeful that the new controller OS update will resolve some of my bugbears. Failing that, a switch to pfSense is almost inevitable.
 
 #### Raspberry Pis
 I played a little with the Raspberry Pi this year, creating a small cluster to learn Kubernetes. This was a super cool little setup with a fancy cluster case and all, but I just wasn’t using it. Like the Optiplex, I sold them on at a fair price to a friend. However, I intend to revisit the Pi moving PiHole from the sever to a Pi, along with my reverse proxy, NUT (a network UPS server) and potentially a second Pi for redundancy.
