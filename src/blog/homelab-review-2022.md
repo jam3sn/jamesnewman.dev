@@ -62,7 +62,7 @@ I also needed to add a PCI SATA card in order to pass through the SATA controlle
 
 After much consideration and a little convincing from a friend, I decided to give Unraid another chance. With only two bays on my Synology, I needed more storage capacity and with Synology moving to AMD CPUs across their new line up, a new NAS was out of the question. 
 
-After much deliberation I decided to rebuild my server in yet another case, this time with the Fractal Refine R5. The plan was to rehouse the server in the cupboard that was its original home. However, this time I purchased a shelving rack that would better fit the awkward space.
+I decided to rebuild my server in yet another case, this time with the Fractal Refine R5. The plan was to rehouse the server in the cupboard that was its original home. However, this time I purchased a shelving rack that would better fit the awkward space.
 
 ![Iteration 3 angled](https://res.cloudinary.com/jam3sn/image/upload/c_scale,h_500/v1672245242/server-it-3-front.png)
 
