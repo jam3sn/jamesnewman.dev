@@ -19,11 +19,13 @@
 :root {
   --theme-color-primary: #1E272E;
   --theme-color-secondary: #FAF9F0;
+  --theme-color-code: #e6e4d1;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --theme-color-primary: #F4F1DE;
     --theme-color-secondary: #1E272E;
+    --theme-color-code: #2e3c47;
   }
 }
 
@@ -226,7 +228,7 @@ pre > code[class*=language-] {
 
 /* Code blocks */
 pre[class*=language-] {
-  background-color: var(--theme-color-secondary-alt);
+  background-color: var(--theme-color-code);
   border-radius: 12px;
   padding: 1em;
   margin: 0.5em 0;
@@ -236,7 +238,7 @@ pre[class*=language-] {
 /* Inline code */
 p > code {
   padding: 4px 8px;
-  background: var(--theme-color-secondary-alt);
+  background: var(--theme-color-code);
   border-radius: 8px;
   font-size: 16px;
 }

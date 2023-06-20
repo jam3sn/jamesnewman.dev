@@ -5,10 +5,13 @@
 :root {
     --theme-color-primary: #1E272E;
     --theme-color-secondary: #FAF9F0;
+    --theme-color-code: #e6e4d1;
 
     @media (prefers-color-scheme: dark) {
         --theme-color-primary: #F4F1DE;
         --theme-color-secondary: #1E272E;
+        // --theme-color-code: #37444e;
+        --theme-color-code: #2e3c47;
     }
 }
 

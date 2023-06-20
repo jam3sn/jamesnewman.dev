@@ -31,7 +31,7 @@
  
  /* Code blocks */
  pre[class*="language-"] {
-     background-color: var(--theme-color-secondary-alt);
+     background-color: var(--theme-color-code);
      border-radius: $border-radius;
      padding: 1em;
      margin: .5em 0;
@@ -41,7 +41,7 @@
  /* Inline code */
  p > code {
      padding: 4px 8px;
-     background: var(--theme-color-secondary-alt);
+     background: var(--theme-color-code);
      border-radius: 8px;
      font-size: 16px;
  }
