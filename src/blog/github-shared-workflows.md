@@ -1,7 +1,7 @@
 ---
 title: Sharing Github workflows between private repos
-date: 2023-06-20
-summary: Lets setup some shared github workflows to use across your private repos.
+date: 2023-08-09
+summary: Lets setup a private shared github workflow to use across our private repositories.
 tags: ['post', 'github', 'actions', 'workflows', 'devops', 'guide']
 layout: post
 ---
@@ -14,7 +14,7 @@ Now the Github docs can be a little unclear on how to set this up. For one, they
 
 To get started, lets created a central repository for our shared workflows - this **can** be private. Once created, you'll want to create a `.github` directory with another directory called `workflows` inside it, like normal for workflows.
 
-We'll create a simple action that just echos some text for this guide, `echo.yaml`, but feel free to use your own. We also need a properties file which shared the same name, but replacing `.yaml` with `.properties.json`, i.e. `echo.properties.json`.
+We'll create a simple action that just echo's some text for this guide, `echo.yaml`, but feel free to use your own. We also need a properties file which shared the same name, but replacing `.yaml` with `.properties.json`, i.e. `echo.properties.json`.
 
 Once created, you repository should look like this:
 ```txt
@@ -26,12 +26,12 @@ Once created, you repository should look like this:
 
 ```
 
-As for the contents of `echo.yaml`, we'll use this:
+As for the contents of `echo.yaml`, we'll use this as simple example:
 ```yaml
 name: Echo
 
 on:
-  push:
+  workflow_call:
 
 jobs:
   build:
@@ -66,7 +66,7 @@ Before we can use this though, we need to update the repository settings to make
 
 Now we have our shared workflows repository setup, lets put them to use in a separate repository.
 
-In this repository, you'll once again want the `.github/workflows` directory setup, along with a new workflow yaml to reference the shared workflow. I'm also going call this `call-echo.yaml`.
+In this repository, you'll once again want the `.github/workflows` directory setup, along with a new workflow yaml to reference the shared workflow. I'm going call this `call-echo.yaml`.
 
 Using the shared workflow is actually really straight forward. We add a job, name and the `use:` syntax, along with a path to the workflow.
 
@@ -86,7 +86,52 @@ on:
 
 jobs:
   call-echo-workflow:
-    use: jam3sn/shared-workflows/.github/workflows/echo.yaml@main
+    uses: jam3sn/shared-workflows/.github/workflows/echo.yaml@main
 ```
 
-That's it. You can get a little more fancy with it, passing further configs and secrets when needed, as documented by Github [here](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
+Now you might want to pass some inputs and secrets to be used in this workflow, these might be an application version, or an access token. So we'll add these to the shared workflow like so:
+```yaml
+name: Echo
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        description: 'Message to echo'
+        default: 'Hello'
+        required: false
+        type: string
+    secrets:
+      TOP_SECRET:
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Echo a message
+        run: echo ${{ inputs.message }} ${{ secrets.TOP_SECRET }}
+```
+You can see we've defined the input `message` and the secret `TOP_SECRET`, and then used them in our job.
+
+I should state it's obviously a terrible idea to echo a secret!
+
+Now lets update our caller workflow file (`call-echo.yaml`) that uses this shared workflow:
+```yaml
+name: Call echo
+
+on:
+  push:
+
+jobs:
+  call-echo-workflow:
+    uses: jam3sn/shared-workflows/.github/workflows/echo.yaml@main
+    with:
+      message: 'Ahoy!'
+    secrets:
+      TOP_SECRET: 'Agent 47'
+```
+Note: if you're using secrets, Github has a secure way to store and use them as documented [here](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment).
+
+That's it. You can find further documentation from Github [here](https://docs.github.com/en/actions/using-workflows/reusing-workflows), although it's somewhat like searching for a needle in a haystack.
